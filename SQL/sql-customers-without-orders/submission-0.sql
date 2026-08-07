@@ -1,0 +1,5 @@
+select name from customers
+where customers.id not in (
+    select customer_id from orders
+    where customers.id = orders.customer_id
+);
